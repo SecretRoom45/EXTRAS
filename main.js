@@ -1,13 +1,14 @@
 /* ═══════════════════════════════════════════════════════════
-   EXTRAS — Script principal
+   ELOK — Script principal
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Nav scroll effect ─────────────────────────────────── */
   const nav = document.querySelector('.nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
   /* ── Mobile burger menu ────────────────────────────────── */
   const burger = document.querySelector('.nav__burger');
@@ -15,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   burger?.addEventListener('click', () => {
     const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', !expanded);
+    burger.setAttribute('aria-expanded', String(!expanded));
     links.classList.toggle('open', !expanded);
-    // Animate burger
+
     const spans = burger.querySelectorAll('span');
     if (!expanded) {
       spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -28,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close menu on link click
   links?.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       links.classList.remove('open');
@@ -40,45 +40,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Smooth reveal on scroll (Intersection Observer) ───── */
-  const revealEls = document.querySelectorAll(
-    '.hero__card, .stat, .project-card, .service-card, .about__img-wrap, .about__text, .contact__info, .contact__form'
+  /* ── Reveal on scroll ──────────────────────────────────── */
+  const style = document.createElement('style');
+  style.textContent = '.reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; } .reveal.visible { opacity: 1; transform: none; }';
+  document.head.appendChild(style);
+
+  const revealTargets = document.querySelectorAll(
+    '.stat-card, .pack-card, .service-card, .about__text, .about__img-wrap, .contact__info, .contact__form, .pricing__note, .reassurance__list'
   );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealEls.forEach((el, i) => {
-    el.style.opacity    = '0';
-    el.style.transform  = 'translateY(28px)';
-    el.style.transition = `opacity .55s ease ${i * 0.05}s, transform .55s ease ${i * 0.05}s`;
-    observer.observe(el);
+  revealTargets.forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = `${i * 0.04}s`;
   });
 
-  document.head.insertAdjacentHTML('beforeend', `
-    <style>
-      .visible { opacity: 1 !important; transform: translateY(0) !important; }
-    </style>
-  `);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-  /* ── Contact form (basic) ──────────────────────────────── */
+  revealTargets.forEach(el => observer.observe(el));
+
+  /* ── Contact form feedback ─────────────────────────────── */
   const form = document.querySelector('.contact__form');
   form?.addEventListener('submit', e => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
-    btn.textContent = 'Message envoyé ✓';
+    const orig = btn.textContent;
+    btn.textContent = 'Demande envoyée ✓';
     btn.disabled = true;
-    btn.style.background = '#00b894';
+    btn.style.background = '#2d9a5c';
+    btn.style.borderColor = '#2d9a5c';
     setTimeout(() => {
-      btn.textContent = 'Envoyer le message →';
+      btn.textContent = orig;
       btn.disabled = false;
       btn.style.background = '';
+      btn.style.borderColor = '';
       form.reset();
     }, 3500);
   });

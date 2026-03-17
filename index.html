@@ -3,210 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXTRAS — Studio Créatif</title>
+  <title>Elok — Conciergerie locative · Gien & Pays du Giennois</title>
+  <meta name="description" content="Délégation complète ou partielle de votre location courte durée. Exigence hôtelière, réactivité locale. Dans un rayon de 20 km autour de Gien." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════ NAVIGATION ══ -->
-  <header class="nav">
+  <!-- ══════════════════════════════════════ NAVIGATION ══ -->
+  <header class="nav" id="top">
     <div class="nav__inner">
-      <a href="/" class="nav__logo">EXTRAS</a>
+      <a href="/" class="nav__logo">elok<span>.</span></a>
       <nav class="nav__links">
+        <a href="#formules">Nos formules</a>
         <a href="#about">À propos</a>
-        <a href="#work">Projets</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--outline">Discutons</a>
+      <a href="#contact" class="btn btn--primary nav__cta">Estimation gratuite</a>
       <button class="nav__burger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════ HERO ══════── -->
+  <!-- ══════════════════════════════════════ HERO ════════ -->
   <section class="hero" id="home">
-    <div class="hero__bg">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__grid"></div>
-    </div>
-
     <div class="hero__inner">
+
+      <!-- Colonne gauche — texte -->
       <div class="hero__content">
-        <span class="hero__badge">Studio Créatif · Paris</span>
+        <span class="hero__badge">Conciergerie premium · Gien &amp; Pays du Giennois</span>
+
         <h1 class="hero__title">
-          On crée des<br />
-          <span class="hero__title--accent">expériences</span><br />
-          qui marquent.
+          Gagnez plus.<br />
+          <span class="hero__title--green">Gérez moins.</span><br />
+          On s'occupe de tout.
         </h1>
+
         <p class="hero__desc">
-          Design, développement et stratégie digitale pour les marques
-          qui refusent d'être ordinaires.
+          Délégation complète ou partielle de votre location courte durée — avec l'exigence hôtelière et la réactivité d'un acteur local. Dans un rayon de 20 km autour de Gien.
         </p>
+
         <div class="hero__actions">
-          <a href="#work" class="btn btn--primary">Voir nos projets</a>
-          <a href="#about" class="btn btn--ghost">
-            <span class="btn__icon">▶</span> Notre histoire
-          </a>
+          <a href="#contact" class="btn btn--primary">Estimation gratuite →</a>
+          <a href="#formules" class="btn btn--ghost-green">Voir les formules</a>
         </div>
       </div>
 
-      <div class="hero__visual">
-        <div class="hero__card hero__card--main">
-          <div class="hero__card-tag">Dernier projet</div>
-          <div class="hero__card-img">
-            <div class="placeholder-img"></div>
-          </div>
-          <div class="hero__card-body">
-            <span class="tag">Branding</span>
-            <h3>Rebranding Maison Verre</h3>
-            <p>Identité visuelle complète pour une maison de luxe parisienne.</p>
+      <!-- Colonne droite — stat-cards -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-card__num">4,92★</div>
+          <div class="stat-card__label">
+            Note moyenne Airbnb<span class="stat-card__sub">sur nos biens gérés</span>
           </div>
         </div>
-        <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__num">120+</span>
-            <span class="stat__label">Projets livrés</span>
+        <div class="stat-card">
+          <div class="stat-card__num">70%</div>
+          <div class="stat-card__label">
+            Taux d'occupation moyen<span class="stat-card__sub">grâce au pricing dynamique</span>
           </div>
-          <div class="stat">
-            <span class="stat__num">8 ans</span>
-            <span class="stat__label">D'expérience</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">98%</span>
-            <span class="stat__label">Clients satisfaits</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__num">6 ans</div>
+          <div class="stat-card__label">
+            D'expérience locale<span class="stat-card__sub">+ 500 avis propriétaires &amp; voyageurs</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ ABOUT ═══════ -->
+  <!-- ══════════════════════════════════════ PRICING ═════ -->
+  <section class="section pricing" id="formules">
+    <div class="container">
+
+      <div class="pricing__header">
+        <span class="section__eyebrow">Nos formules</span>
+        <h2 class="section__title">Choisissez votre niveau de délégation</h2>
+        <p class="pricing__subtitle">Deux offres claires, une seule commission. Vous ne payez que quand vous gagnez.</p>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- Card 1 — Pack 100% digital -->
+        <div class="pack-card">
+          <h3 class="pack-card__title">Pack 100% digital</h3>
+          <p class="pack-card__desc">Je délègue la gestion digitale mais je garde la main sur le ménage et la blanchisserie.</p>
+
+          <div class="pack-card__price">
+            <span class="pack-card__price-num">12,5%</span>
+            <span class="pack-card__price-note">des recettes locatives · sans frais fixes</span>
+          </div>
+
+          <hr class="pack-card__sep" />
+
+          <ul class="pack-card__features">
+            <li><span class="check-icon">✓</span>Création &amp; optimisation de l'annonce</li>
+            <li><span class="check-icon">✓</span>Photos professionnelles du logement</li>
+            <li><span class="check-icon">✓</span>Tarification dynamique multi-plateformes</li>
+            <li><span class="check-icon">✓</span>Arrivée autonome du voyageur</li>
+            <li><span class="check-icon">✓</span>Assistance voyageurs 7j/7 · 365j/an</li>
+            <li><span class="check-icon">✓</span>Livret d'accueil digital</li>
+            <li><span class="check-icon">✓</span>Gestion des litiges &amp; réclamations</li>
+          </ul>
+
+          <a href="#contact" class="btn btn--ghost-green btn--full">Demander un devis</a>
+        </div>
+
+        <!-- Card 2 — Pack Sérénité (featured) -->
+        <div class="pack-card pack-card--featured">
+          <div class="pack-card__badge">Formule complète</div>
+
+          <h3 class="pack-card__title">Pack Sérénité</h3>
+          <p class="pack-card__desc">La solution clé en main pour déléguer à 100% la gestion de votre bien.</p>
+
+          <div class="pack-card__price">
+            <span class="pack-card__price-num">12,5% + frais</span>
+            <span class="pack-card__price-note">des recettes · frais selon prestataires</span>
+          </div>
+
+          <hr class="pack-card__sep" />
+
+          <ul class="pack-card__features">
+            <li><span class="check-icon">✓</span>Tout le Pack 100% digital</li>
+            <li><span class="check-icon">✓</span>+ Coordination &amp; contrôle du ménage</li>
+            <li><span class="check-icon">✓</span>+ Blanchisserie hôtelière incluse</li>
+            <li><span class="check-icon">✓</span>+ Consommables (café, savon, papier…)</li>
+            <li><span class="check-icon">✓</span>+ Check-in/out physique ou autonome</li>
+            <li><span class="check-icon">✓</span>+ Reporting mensuel propriétaire</li>
+            <li><span class="check-icon">✓</span>+ Gestion des urgences &amp; maintenance</li>
+          </ul>
+
+          <a href="#contact" class="btn btn--primary btn--full">Confier mon bien →</a>
+        </div>
+
+      </div>
+
+      <!-- Note de transparence -->
+      <div class="pricing__note">
+        Les frais de ménage, blanchisserie et consommables sont facturés au coût réel des prestataires. Pas de marge cachée. Vous les retrouvez détaillés dans votre reporting mensuel.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ RÉASSURANCE ══ -->
+  <div class="reassurance">
+    <div class="container">
+      <ul class="reassurance__list">
+        <li><span class="reassurance__dot">•</span>Aucun frais fixe ni abonnement</li>
+        <li><span class="reassurance__dot">•</span>Sans engagement de durée</li>
+        <li><span class="reassurance__dot">•</span>Estimation gratuite en 15 min</li>
+        <li><span class="reassurance__dot">•</span>Réponse sous 24h</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════ ABOUT ════════ -->
   <section class="section about" id="about">
     <div class="container">
       <div class="about__grid">
         <div class="about__media">
           <div class="about__img-wrap">
             <div class="placeholder-img placeholder-img--tall"></div>
-            <div class="about__badge-float">
-              <span>✦</span> Studio depuis 2016
-            </div>
+            <div class="about__badge-float">🏡 Acteur local depuis 2018</div>
           </div>
         </div>
         <div class="about__text">
           <span class="section__eyebrow">À propos</span>
-          <h2 class="section__title">Un studio à taille humaine, une vision sans limites.</h2>
-          <p>Nous sommes une équipe de designers, développeurs et stratèges passionnés. Chaque projet est une opportunité de repousser les conventions et de créer quelque chose de véritablement unique.</p>
-          <p>De l'idée au déploiement, nous accompagnons nos clients à chaque étape avec méthode et créativité.</p>
-          <a href="#contact" class="btn btn--primary">Travailler avec nous</a>
+          <h2 class="section__title">Une conciergerie de proximité, pas une franchise.</h2>
+          <p>Basés à Gien, nous connaissons le marché locatif local mieux que personne. Nos propriétaires nous font confiance parce qu'on est disponibles, transparents et efficaces — pas parce qu'on est les moins chers.</p>
+          <p>On intervient dans un rayon de 20 km autour de Gien pour garantir une réactivité maximale à vos voyageurs.</p>
+          <a href="#contact" class="btn btn--primary">Nous contacter</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ WORK ════════ -->
-  <section class="section work" id="work">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Projets</span>
-        <h2 class="section__title">Ce qu'on a créé.</h2>
-      </div>
-      <div class="work__grid">
-        <article class="project-card project-card--large">
-          <div class="project-card__img placeholder-img"></div>
-          <div class="project-card__info">
-            <span class="tag">Web Design</span>
-            <h3>Plateforme E-commerce Luxe</h3>
-            <p>Expérience d'achat premium pour une maison de couture.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card__img placeholder-img"></div>
-          <div class="project-card__info">
-            <span class="tag">Branding</span>
-            <h3>Identité Maison Verre</h3>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card__img placeholder-img"></div>
-          <div class="project-card__info">
-            <span class="tag">Application</span>
-            <h3>App Mobile Fitness</h3>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card__img placeholder-img"></div>
-          <div class="project-card__info">
-            <span class="tag">Stratégie</span>
-            <h3>Campagne Digitale</h3>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ SERVICES ════ -->
+  <!-- ══════════════════════════════════════ SERVICES ═════ -->
   <section class="section services" id="services">
     <div class="container">
       <div class="section__header">
-        <span class="section__eyebrow">Services</span>
-        <h2 class="section__title">Ce qu'on fait.</h2>
+        <span class="section__eyebrow">Ce qu'on fait</span>
+        <h2 class="section__title">Une gestion complète, de A à Z.</h2>
       </div>
       <div class="services__grid">
         <div class="service-card">
           <div class="service-card__icon">◈</div>
-          <h3>Design UI/UX</h3>
-          <p>Interfaces intuitives et esthétiques qui convertissent et fidélisent.</p>
+          <h3>Optimisation tarifaire</h3>
+          <p>Pricing dynamique sur Airbnb, Booking et VRBO pour maximiser vos revenus en toute saison.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">⬡</div>
-          <h3>Développement Web</h3>
-          <p>Sites et applications performants, accessibles et pérennes.</p>
+          <h3>Gestion des voyageurs</h3>
+          <p>Assistance 7j/7, check-in autonome ou physique, gestion des litiges et des avis.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">◎</div>
-          <h3>Branding</h3>
-          <p>Identités visuelles fortes qui racontent votre histoire.</p>
+          <h3>Ménage &amp; blanchisserie</h3>
+          <p>Coordination de prestataires de confiance, contrôle qualité à chaque passage.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">◇</div>
-          <h3>Stratégie Digitale</h3>
-          <p>Feuille de route claire pour atteindre vos objectifs en ligne.</p>
+          <h3>Reporting &amp; suivi</h3>
+          <p>Tableau de bord propriétaire mensuel — revenus, taux d'occupation, avis, dépenses.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ CTA ═════════ -->
-  <section class="cta-band">
-    <div class="container">
-      <div class="cta-band__inner">
-        <h2>Votre prochain projet<br /><span>commence ici.</span></h2>
-        <a href="#contact" class="btn btn--primary btn--lg">Démarrer →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ CONTACT ═════ -->
+  <!-- ══════════════════════════════════════ CONTACT ══════ -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact__grid">
         <div class="contact__info">
           <span class="section__eyebrow">Contact</span>
-          <h2 class="section__title">Parlons de votre projet.</h2>
-          <p>Nous répondons sous 24h. Pas de formulaire interminable — juste une vraie conversation.</p>
+          <h2 class="section__title">Parlons de votre bien.</h2>
+          <p>Estimation gratuite en 15 minutes. Pas de formulaire interminable — juste une vraie conversation avec quelqu'un qui connaît Gien.</p>
           <div class="contact__links">
-            <a href="mailto:hello@extras.studio">hello@extras.studio</a>
+            <a href="mailto:hello@elok.fr">hello@elok.fr</a>
             <a href="tel:+33600000000">+33 6 00 00 00 00</a>
           </div>
         </div>
@@ -220,30 +240,30 @@
             <input type="email" id="email" name="email" placeholder="votre@email.com" required />
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet…" required></textarea>
+            <label for="message">Votre bien</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre logement et vos attentes…" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">Envoyer le message →</button>
+          <button type="submit" class="btn btn--primary btn--full">Envoyer ma demande →</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ FOOTER ══════ -->
+  <!-- ══════════════════════════════════════ FOOTER ═══════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <a href="/" class="footer__logo">EXTRAS</a>
+        <a href="/" class="footer__logo">elok<span>.</span></a>
         <nav class="footer__nav">
+          <a href="#formules">Nos formules</a>
           <a href="#about">À propos</a>
-          <a href="#work">Projets</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 EXTRAS Studio. Tous droits réservés.</p>
-        <p>Fait avec soin · Paris, France</p>
+        <p>© 2026 Elok — Conciergerie locative · Gien &amp; Pays du Giennois</p>
+        <p>Acteur local · Tarification transparente</p>
       </div>
     </div>
   </footer>
